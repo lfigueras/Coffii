@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 gem 'activeadmin'
 gem 'devise'
+gem 'pg'
 gem 'carrierwave', '~> 2.0'
 gem 'active_admin_flat_skin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -46,9 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-group :production do
-  gem 'pg'
-end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
