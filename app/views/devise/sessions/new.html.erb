@@ -1,0 +1,58 @@
+
+
+<div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5 ">
+  <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+    <div class="mx-auto h-hull w-full max-w-sm lg:w-96">
+    <div class="text-center mb-10">
+                    <h1 class="font-bold text-3xl text-white">LOG IN</h1>
+                    <p  class="font-semibold  text-white">Enter your information</p>
+                </div>
+      <div>
+      
+        <div class=" sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <p class="notice  font-bold text-red-500"><%= notice %></p>
+        <p class="alert font-bold text-red-500"><%= alert %></p>
+          
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+            <%= f.label :email_address, :class=>"block text-sm font-medium text-gray-700" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", :class=>"appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" %>
+    
+    
+            <%= f.label :password, :class=>"block text-sm font-medium text-gray-700" %>
+            <%= f.password_field :password, autocomplete: "current-password",:class=>"appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" %><br/>
+        
+    
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <% if devise_mapping.rememberable? %>
+            
+                    <%= f.check_box :remember_me, :class=> "h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded" %>
+                    <%= f.label :remember_me,  :class=>"ml-2 block text-sm text-gray-900" %>
+                
+                <% end %>
+              </div>
+              
+    
+              <div class="text-sm">
+                <a href="#" class="font-medium text-yellow-900 hover:text-yellow-800"> Forgot your password? </a>
+              </div>
+            </div><br/>
+    
+            
+            
+            <div class="actions">
+            <%= f.submit "Sign in", :class=>"w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-800 hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" %>
+          </div>
+          <% end %>
+    
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

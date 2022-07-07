@@ -1,0 +1,49 @@
+<body class=" bg-gray-100">
+
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8  py-12">
+  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  <div class="max-w-3xl mx-auto">
+  <div>
+  <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="md:col-span-1">
+      <div class="px-4 sm:px-0">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">Create order</h3>
+        <p class="mt-1 text-sm text-gray-600">
+          This information will be submitted to the kitchen so be careful.
+        </p>
+      </div>
+    </div>
+    <div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="shadow sm:rounded-md sm:overflow-hidden">
+          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2">
+              <%= form_with model: @order do |form| %>
+                <div>
+                  <%= form.label :name_of_product, :class=>"" %><br>
+                  <%= form.collection_select :name, Product.all, :name, :name, {:prompt => 'Select a Product'}, :class=>"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                </div>
+            
+                <div>
+                  <%= form.submit :class=>"focus:outline-none mt-10 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" %>
+                </div>
+              <% end %>  
+              
+              </div>
+            </div>
+
+          
+
+           
+           
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+</div>  </div>
+</div>
+</body>
